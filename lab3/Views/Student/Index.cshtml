@@ -1,0 +1,46 @@
+﻿@{
+	ViewBag.Title = "Index";
+}
+@model List<student>
+
+
+	@*   @Html.ActionLink("Add Student" ,"showadd","Student",null,new{@class="btn btn-success"})*@
+	   <a asp-action="add" asp-controller="Student"  class ="btn btn-success" >Add Student</a>
+	@if (Model.Count > 0)
+	{
+		<table class="table table-border table-hover">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Department</th>
+				<th>Action</th>
+			</tr>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.ID</td>
+						<td>@item.Name</td>
+						<td>@item.Age</td>
+						<td>@item.department?.Name</td>
+						<td>  
+							<a asp-action="edit" asp-controller="Student" asp-route-id=@item.ID class="btn btn-warning" > Edit</a>
+								<a asp-action="editimage" asp-controller="Student" asp-route-id=@item.ID class="btn btn-warning" > Edit Image</a> 
+							<a asp-action="delete" asp-controller="Student" asp-route-id=@item.ID  class ="btn btn-danger"> Delete</a>
+							<a asp-action="details" asp-controller="Student" asp-route-id=@item.ID  class ="btn btn-info"> Details</a></td>
+					</tr>
+				}
+			</tbody>
+
+		</table>
+	}
+	else
+	{
+
+		<div>
+			No Data in Student
+		</div>
+	
+	}
+

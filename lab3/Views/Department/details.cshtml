@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title> add</title>
+		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+	</head>
+	<body>
+		<div class="card m-auto" style="width: 18rem;background-color:#CFE2FF;" >
+			 <div class="card-body">
+    <h5 class="card-title">Details Department</h5>
+	<hr />
+    <p class="card-text"> 
+		<p> ID: @((ViewData["dept"] as department )?.ID) </p>
+		<p> Name: @((ViewData["dept"] as department )?.Name) </p>
+		<p> Capacity: @((ViewData["dept"] as department )?.Capacity) </p>
+		 <a asp-action="index" asp-controller="Department"  class ="btn btn-secondary" >return to list</a>
+		 </div>
+		 </div>
+		</body>
+		</html>

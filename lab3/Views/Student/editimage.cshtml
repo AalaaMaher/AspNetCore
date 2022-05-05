@@ -1,0 +1,43 @@
+﻿@{
+ ViewBag.Title="editimage";
+}
+@model student
+    
+		<div class="m-auto">
+			
+         	<div class="card m-auto" style="width:30rem;background-color:#CFE2FF;" >
+  <div class="card-body">
+    <h5 class="card-title">Edit Student Image </h5>
+	<hr />
+    <div class="card-text"> 
+			<form method="post" class="m-auto"  enctype="multipart/form-data">
+			<table class =m-auto>
+				<tr>
+					<td>
+					</td>
+					<td style="width:100px;height:75px;">
+						<img src="~/images/@Model.StuImg" alt="Student Image" alt="Student Image" style="width:100;height:75; border-radius:70%;" />
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+				<td> Profile Image</td>
+			<td>	<input type="file" name="StuImg" /></td>
+			<td><div asp-validation-summary=ModelOnly></div></td>
+			</tr>
+			<tr>
+				<td>
+              <input type="submit" value="edit" class="btn btn-danger  m-2"/> </td>
+			  <td>
+			   <a asp-action="index" asp-controller="Student" class="btn btn-primary  m-2">return to list</a> </td>
+			   </tr>
+			</table>
+			</form>
+		</div>
+		<div>
+				</div>
+		   </div>
+		   </div>
+	@*	<partial name="studentcard"/>*@
+		</div>
+		

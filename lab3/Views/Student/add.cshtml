@@ -1,0 +1,51 @@
+﻿@{
+	ViewBag.Title = "add";
+}
+@model student
+
+         	<div class="card m-auto" style="width:45rem;background-color:#CFE2FF;" >
+  <div class="card-body">
+    <h5 class="card-title">ADD Student </h5>
+	<hr />
+    <div class="card-text"> 
+		<form asp-action="add" asp-controller="student"  method="post" enctype="multipart/form-data">
+			@*<div asp-validation-summary=All></div>*@
+	    <table class="table table-border align-content-center w-75 m-auto">
+				<tr>
+				<td> Profile Image</td>
+			<td>	<input type="file" name="StuImg" /></td>
+			<td><div asp-validation-summary=ModelOnly></div></td>
+			</tr>
+		<partial name="studentform"/>
+			<tr>
+				<td> UserName</td>
+			<td>	<input asp-for=UserName /></td>
+				<td><span asp-validation-for=UserName></span></td>
+			</tr>
+			
+			<tr>
+				<td> Password</td>
+			<td>	<input asp-for=Password type="password" /></td>
+				<td><span asp-validation-for=Password></span></td>
+			</tr>
+			<tr>
+				<td> ConfirmPassword</td>
+			<td>	<input asp-for=CPassword  type="password"/></td>
+				<td><span asp-validation-for=CPassword></span></td>
+			</tr>	
+			<tr >
+             <td />
+			 <td> <input type="submit" class ="btn btn-primary" value ="ADD" /> </td>
+			<td></td>
+
+			</tr>
+			</table>
+		
+			</form>
+				</div>
+		   </div>
+		   </div>
+			  @section Scripts{
+			   <partial name="_ValidationScriptsPartial"/>
+		   }
+		

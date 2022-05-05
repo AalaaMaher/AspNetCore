@@ -1,0 +1,25 @@
+﻿   @model student
+		<tr>
+				<td> Name</td>
+			<td>	<input asp-for=Name /></td>
+			<td><span asp-validation-for=Name></span></td>
+			</tr>
+			<tr>
+				<td> Age</td>
+			<td>	<input asp-for=Age /></td>
+				<td><span asp-validation-for=Age></span></td>
+			</tr>
+			<tr>
+				<td> Department</td>
+			<td>	<select asp-for=DeptNoo  asp-items="ViewBag.depts" >
+				<option selected disabled >Select Department</option>
+				</select>
+			</td>
+				<td><span asp-validation-for=DeptNoo></span> </td>
+			</tr>
+				<tr>
+				<td> Email</td>
+			<td>	<input asp-for=Email /></td>
+				<td><span asp-validation-for=Email></span></td>
+			</tr>
+			

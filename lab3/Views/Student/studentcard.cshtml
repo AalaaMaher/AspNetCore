@@ -1,0 +1,17 @@
+﻿@model student
+
+	<div class="card m-auto" style="width: 20rem;background-color:#CFE2FF;" >
+      <img src="~/images/@Model.StuImg" class="card-img-top" alt="Student Image" style="width:100;height:140px;" />
+  <div class="card-body">
+    <h5 class="card-title">Student Details</h5>
+    <p class="card-text"> 
+		Name :@Model.Name <br />
+		Age :@Model.Age <br />
+		Department:@Model.department.Name <br>
+		UserName :@Model.UserName<br>
+		Email:@Model.Email <br>
+		Password :@Model.Password <br>
+	</p>
+    <a asp-action="index" asp-controller="Student" class="btn btn-primary">Go to List</a>
+  </div>
+</div>

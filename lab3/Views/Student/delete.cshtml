@@ -1,0 +1,22 @@
+﻿@{
+	ViewBag.Title = "add";
+}
+@model student
+
+		<div class="m-auto">
+			<h2 class="m-auto align-content-center" style="align-items:center">Are you sure you want to delete student?.</h2>
+			<form method="post" class="m-auto">
+			<table class =m-auto>
+			<tr>
+				<td>
+              <input type="submit" value="YES" class="btn btn-danger  m-2"/> </td>
+			  <td>
+			   <a asp-action="index" asp-controller="Student" class="btn btn-primary  m-2">NO</a> </td>
+			   </tr>
+			</table>
+			</form>
+		</div>
+		<div>
+		<partial name="studentcard"/>
+		</div>
+		

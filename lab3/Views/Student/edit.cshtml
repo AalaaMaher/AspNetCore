@@ -1,0 +1,47 @@
+﻿@{
+	ViewBag.Title = "edit";
+}
+@model student
+      	<div class="card m-auto" style="width:45rem;background-color:#CFE2FF;" >
+  <div class="card-body">
+    <h5 class="card-title">Edit Student </h5>
+	<hr />
+    <div class="card-text"> 
+
+		<form asp-action="edit" asp-controller="student"  method="post" enctype="multipart/form-data">
+				@*<div asp-validation-summary=All></div>*@
+	    <table class="table table-border align-content-center w-75 m-auto">
+		<partial name="studentform"/>
+		<input asp-for=ID name="ID" hidden/>
+			<tr >
+				<td > UserName</td>
+			<td>	<input asp-for=UserName name="username" /></td>
+				<td><span asp-validation-for=UserName hidden></span></td>
+			</tr>
+			
+			<tr >
+				<td > Password</td>
+			<td >	<input asp-for=Password  /></td>
+				<td><span asp-validation-for=Password></span></td>
+			</tr>
+			<tr >
+				<td> ConfirmPassword</td>
+			<td>	<input asp-for=CPassword value=@Model.Password type="password" /></td>
+				<td><span asp-validation-for=CPassword></span></td>
+			</tr>	
+		<tr >
+             <td />
+			 <td> <input type="submit" class ="btn btn-primary" value ="Edit" /> </td>
+			<td></td>
+
+			</tr>
+			</table>
+			</form>
+				</div>
+		   </div>
+		   </div>
+		   @section Scripts{
+			   <partial name="_ValidationScriptsPartial"/>
+		   }
+		
+		   

@@ -1,0 +1,45 @@
+﻿
+@model List<department>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>index</title>
+		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+	</head>
+	<body>
+	@*   @Html.ActionLink("Add Dept" ,"showadd","Department",null,new{@class="btn btn-success"})*@
+	
+	  
+		
+	<div class="flex-md-row justify-content-center mt-3 w-100 ">
+		 <a asp-action="add" asp-controller="Department"  class ="btn btn-success  m-2" >Add Department</a>
+		<div class="row">
+	   <table class="table table-border m-3">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Capacity</th>
+				<th>Action</th>
+			</tr>
+			<tbody>
+				@foreach(var item in Model)
+				{
+					<tr>
+						<td>@item.ID</td>
+						<td>@item.Name</td>
+						<td>@item.Capacity</td>
+						<td>  
+							<a asp-action="showedit" asp-controller="Department" asp-route-id=@item.ID class="btn btn-warning"> Edit</a> 
+					    	<a asp-action="deptdelete" asp-controller="Department" asp-route-id=@item.ID class ="btn btn-danger" > Delete</a>
+						<a asp-action="details" asp-controller="Department" asp-route-id=@item.ID class ="btn btn-info"> Details</a></td>
+					</tr>
+				}
+			</tbody>
+
+		</table>
+		</div>
+		</div>
+		</body>
+		</html>
